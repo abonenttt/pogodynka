@@ -1,0 +1,11 @@
+App\Entity\Measurement:
+    properties:
+        celsius:
+            - NotNull:
+                  message: 'Temperature is required.'
+                  groups: ['edit', 'create']
+            - Range:
+                  min: -60
+                  max: 60
+                  notInRangeMessage: 'The temperature must be between {{ min }} and {{ max }} degrees Celsius.'
+                  groups: ['edit', 'create']

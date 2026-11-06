@@ -1,0 +1,28 @@
+App\Entity\Location:
+    properties:
+        city:
+            - NotBlank:
+                  message: 'City is required.'
+                  groups: [ 'edit', 'create' ]
+        country:
+            - NotBlank:
+                  message: 'Country is required.'
+                  groups: [ 'edit', 'create' ]
+        latitude:
+            - NotNull:
+                  message: 'Latitude is required.'
+                  groups: [ 'edit', 'create' ]
+            - Range:
+                  min: -90
+                  max: 90
+                  notInRangeMessage: 'The value of Latitude must be between {{ min }} and {{ max }}.'
+                  groups: [ 'edit', 'create' ]
+        longitude:
+            - NotNull:
+                  message: 'Longitude is required.'
+                  groups: [ 'edit', 'create' ]
+            - Range:
+                  min: -180
+                  max: 180
+                  notInRangeMessage: 'The value of Longitude must be between {{ min }} and {{ max }}.'
+                  groups: [ 'edit', 'create' ]
